@@ -1,0 +1,104 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">Configuring author and email
+
+<span style="color: #888888"># home directory</span>
+<span style="color: #996633">$ </span><span style="color: #007020">pwd</span>                                                            
+<span style="color: #996633">$ </span>mkdir git-fast            
+<span style="color: #996633">$ </span><span style="color: #007020">cd </span>git-fast
+<span style="color: #996633">$ </span><span style="color: #007020">pwd</span>    
+<span style="color: #996633">$ </span>git config --global --list     
+<span style="color: #996633">$ </span>git config --global user.name <span style="background-color: #fff0f0">&quot;Bibhash Roy&quot;</span>
+<span style="color: #996633">$ </span>git config --global --list
+<span style="color: #996633">$ </span>git config --global user.email <span style="background-color: #fff0f0">&quot;bibhash@whitepeaksoft.com&quot;</span>
+<span style="color: #996633">$ </span>git config --global --list
+
+<span style="color: #888888"># vi is the editor, ~ is the home directory</span>
+<span style="color: #996633">$ </span>vi ~/.gitconfig                                                
+<span style="color: #996633">$ </span>cat .gitconfig
+
+
+
+Initializing an empty repository
+
+<span style="color: #996633">$ </span><span style="color: #007020">pwd</span>
+<span style="color: #996633">$ </span>mkdir myRepoFromScratch
+<span style="color: #996633">$ </span><span style="color: #007020">cd </span>myRepoFromScratch
+<span style="color: #996633">$ </span><span style="color: #007020">pwd</span>         
+   
+<span style="color: #888888"># notice the creation of .git directory                        </span>
+<span style="color: #996633">$ </span>git init   
+                       
+<span style="color: #888888"># &quot;ls -al&quot; command lists all objects, including hidden                                             </span>
+<span style="color: #996633">$ </span>ls -al  
+      
+<span style="color: #888888"># without using any editor                                                                 </span>
+<span style="color: #996633">$ </span><span style="color: #007020">echo</span> <span style="background-color: #fff0f0">&quot;this is my first file in empty repository&quot;</span> &gt;&gt; firstFileUsingEcho.txt     
+<span style="color: #996633">$ </span>ls
+<span style="color: #996633">$ </span>cat firstFileUsingEcho.txt
+
+ <span style="color: #888888"># create the file and enter some contents</span>
+<span style="color: #996633">$ </span>vi  secondFileUsingVI.txt                                        
+<span style="color: #996633">$ </span>ls
+<span style="color: #996633">$ </span>cat secondFileUsingVI.txt
+
+
+
+Existing unversioned project to repository
+
+<span style="color: #996633">$ </span><span style="color: #007020">pwd</span>
+
+ <span style="color: #888888"># copy the downloaded file</span>
+<span style="color: #996633">$ </span>cp /f/Bibhash/Downloads/initializr-verekia-4.0.zip .
+
+<span style="color: #888888"># unzipping will create a folder called &quot;initilizr&quot;     </span>
+<span style="color: #996633">$ </span>unzip initializr-verekia-4.0.zip                                        
+<span style="color: #996633">$ </span>ls -al
+
+<span style="color: #888888"># remove copied file</span>
+<span style="color: #996633">$ </span>rm initializr-verekia-4.0.zip  
+
+<span style="color: #888888"># rename directory                                          </span>
+<span style="color: #996633">$ </span>mv initializr/ myRepoFromExistingSource    
+              
+<span style="color: #888888"># now we need to add source control to the unversioned repo &quot;myRepoFromExistingSource&quot;</span>
+<span style="color: #996633">$ </span><span style="color: #007020">cd </span>myRepoFromExistingSource  
+         
+<span style="color: #888888"># Initialized existing source                        </span>
+<span style="color: #996633">$ </span>git init            
+
+<span style="color: #888888"># .git folder can be seen with ls -al                                                               </span>
+<span style="color: #996633">$ </span>ls -al          
+
+                                                               
+
+Command Summary - configuration &amp; repository creation
+<span style="color: #888888"># Typically, you’ll want to use the --global flag to set configuration options for the current user.</span>
+<span style="color: #888888"># Define the author name to be used for all commits by the current user.</span>
+<span style="color: #996633">$ </span>git config --global user.name &lt;name&gt;    
+
+<span style="color: #888888"># Define the author email to be used for all commits by the current user.</span>
+<span style="color: #996633">$ </span>git config --global user.email &lt;email&gt;   
+
+<span style="color: #888888"># For listing all the global configuration at user level</span>
+<span style="color: #996633">$ </span>git config --global --list          
+   
+<span style="color: #888888"># Transforms the current directory into a Git repository; the command is same for creating repo from ..contd..</span>
+<span style="color: #888888"># scratch or convert an existing unversioned code base to a git repository             </span>
+<span style="color: #996633">$ </span>git init                                                    
+
+Command Summary - Accessing Git Help system
+
+<span style="color: #888888"># general help</span>
+<span style="color: #996633">$ </span>git <span style="color: #007020">help</span>
+
+<span style="color: #888888"># lists sub-commands</span>
+<span style="color: #996633">$ </span>git <span style="color: #007020">help</span> -a
+
+<span style="color: #888888"># lists concept guides</span>
+<span style="color: #996633">$ </span>git <span style="color: #007020">help</span> -g
+
+<span style="color: #888888"># read about a specific sub-command</span>
+<span style="color: #996633">$ </span>git <span style="color: #007020">help</span> &lt;<span style="color: #007020">command</span>&gt;
+
+<span style="color: #888888"># read about a specific concept</span>
+<span style="color: #996633">$ </span>git <span style="color: #007020">help</span> &lt;concept&gt;<span style="color: #FF0000; background-color: #FFAAAA">&#39;</span>
+</pre></div>
